@@ -228,3 +228,14 @@ TEST(TVector, cant_multiply_vectors_with_not_equal_size)
   EXPECT_ANY_THROW(v = v * v2);
 }
 
+TEST(TVector, set_the_value_to_all_elements_of_the_vector)
+{
+  int sum = 0;
+  TVector<int>v(20);
+  v.SetValueToVector(10);
+  for (size_t i = 0; i <v.GetSize(); i++)
+  {
+    sum += v[i];
+  }
+  EXPECT_EQ(200, sum);
+}
